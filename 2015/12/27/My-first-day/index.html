@@ -5,19 +5,22 @@
   
   <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="title: My first daydate: 2015-12-27 16:54:24
-tags:###11不多说！英雄本色！">
+  <meta name="description" content="title: My first day–搭建博客date: 2015-12-27 16:54:24
+tags:hexo###Mac-搭建-Hexo  
+####1. 安装brew包管理器。Mac自带ruby命令12ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;``">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://yoursite.com/2015/12/27/My-first-day/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="title: My first daydate: 2015-12-27 16:54:24
-tags:###11不多说！英雄本色！">
-<meta property="og:updated_time" content="2015-12-27T10:16:49.000Z">
+<meta property="og:description" content="title: My first day–搭建博客date: 2015-12-27 16:54:24
+tags:hexo###Mac-搭建-Hexo  
+####1. 安装brew包管理器。Mac自带ruby命令12ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;``">
+<meta property="og:updated_time" content="2015-12-27T11:37:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="title: My first daydate: 2015-12-27 16:54:24
-tags:###11不多说！英雄本色！">
+<meta name="twitter:description" content="title: My first day–搭建博客date: 2015-12-27 16:54:24
+tags:hexo###Mac-搭建-Hexo  
+####1. 安装brew包管理器。Mac自带ruby命令12ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;``">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -66,7 +69,7 @@ tags:###11不多说！英雄本色！">
         <section id="main"><article id="post-My-first-day" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/12/27/My-first-day/" class="article-date">
-  <time datetime="2015-12-27T10:16:50.000Z" itemprop="datePublished">2015-12-27</time>
+  <time datetime="2015-12-27T11:37:53.000Z" itemprop="datePublished">2015-12-27</time>
 </a>
     
   </div>
@@ -75,13 +78,46 @@ tags:###11不多说！英雄本色！">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>title: My first day<br>date: 2015-12-27 16:54:24</p>
-<h2 id="tags_3A"><a href="#tags_3A" class="headerlink" title="tags:"></a>tags:</h2><p>###1<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">不多说！英雄本色！</span><br></pre></td></tr></table></figure></p>
+        <p>title: My first day–搭建博客<br>date: 2015-12-27 16:54:24</p>
+<h2 id="tags_3Ahexo"><a href="#tags_3Ahexo" class="headerlink" title="tags:hexo"></a>tags:hexo</h2><p>###Mac-搭建-Hexo  </p>
+<p>####1. 安装brew包管理器。Mac自带ruby命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ruby <span class="operator">-e</span> <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></span><br><span class="line">```<span class="comment">####2.安装Nodejs</span></span><br></pre></td></tr></table></figure></p>
+<p>brew install node<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">####<span class="number">3.</span>安装hexo</span></span><br></pre></td></tr></table></figure></p>
+<p>npm config set registry=”<a href="http://registry.cnpmjs.org" target="_blank" rel="external">http://registry.cnpmjs.org</a>“</p>
+<p>sudo npm install -g hexo<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">####<span class="number">4.</span>初始化hexo</span></span><br></pre></td></tr></table></figure></p>
+<p>hexo init <folder> #执行init命令初始化到你制定的目录<br>例如：hexo init hexo，则会在当前目录下生成hexo目录<br>以下命令在hexo目录下执行。      </folder></p>
+<pre><code>####5.安装依赖包
+
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span></span><br></pre></td></tr></table></figure>
+
+
+####6.生成静态网页
+
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">hexo</span> generate <span class="comment">#自动根据当前目录下的文件，生成静态的网页</span></span><br><span class="line"></span><br><span class="line">或者hexo g</span><br></pre></td></tr></table></figure>
+
+
+####7.运行本地服务
+
+<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">server</span></span><br><span class="line"></span><br><span class="line">或者hexo s</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">此时在浏览器中输入 localhost:<span class="number">4000</span> ，可以查看静态网页</span><br></pre></td></tr></table></figure>
+
+
+####8.添加博文
+
+<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">new</span> <span class="string">"post Name"</span> <span class="preprocessor">#新建博文，其中postName是博文的题目</span></span><br><span class="line"></span><br><span class="line">例如：hexo n “微笑”</span><br><span class="line"></span><br><span class="line">刷新上述静态网页，可以看到新添加的一篇博文。</span><br><span class="line"></span><br><span class="line">PS：博文会自动生成在博客目录下souce/_posts/postName.md</span><br></pre></td></tr></table></figure>
+
+
+####9.部署到github
+</code></pre><p>1.打开github.com,注册github的账户，并且创建仓库sizhupo.github.io</p>
+<p>2.配置ssh-key<br>  git config –global user.email “邮箱的名字”<br>  git config –global user.name “你的用户名”<br>  ssh-keygen -t rsa -C “你的邮箱”<br>  回车三次，在~、.ssh/下生成id_rsa和id_rsa.pub两个文件<br>  复制id_rsa.pub文件内容到github账户下ssh keys 的新建key里面，    add</p>
+<p>3.修改hexo目录下的_config.yml,在最后添加以下内容</p>
+<p>deploy:<br>type: git<br>repository: git@github.com:username/username.github.io.git<br>branch: master</p>
+<p>4.执行 npm install hexo-deployer-git –save</p>
+<p>5.执行hexo g 和hexo d 完成部署<br>```   </p>
+<p>####10.打开浏览器并且入username.github.io来查看你的博客</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/12/27/My-first-day/" data-id="ciioe9m9a0000h75gfvgk9k5m" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/12/27/My-first-day/" data-id="ciiogq6ah0000jc5gydoci0r8" class="article-share-link">Share</a>
       
       
     </footer>
