@@ -64,7 +64,7 @@
     <article id="post-数据库基本操作" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/12/28/数据库基本操作/" class="article-date">
-  <time datetime="2015-12-28T07:39:59.000Z" itemprop="datePublished">2015-12-28</time>
+  <time datetime="2015-12-28T07:41:43.000Z" itemprop="datePublished">2015-12-28</time>
 </a>
     
   </div>
@@ -83,7 +83,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>1、说明：创建数据库 </p>
+        <p>##数据库常见点</p>
+<p>####date: 2015-12-28 15:25:20</p>
+<p>1、说明：创建数据库 </p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">Create</span> <span class="keyword">DATABASE</span> <span class="keyword">database</span>-<span class="keyword">name</span>  </span><br><span class="line"><span class="string">``</span><span class="string">`     </span><br><span class="line">2、说明：删除数据库</span><br><span class="line"></span><br><span class="line">`</span><span class="string">``</span>     </span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">database</span> dbname  </span><br><span class="line"><span class="string">``</span><span class="string">`     </span><br><span class="line">3、说明：备份sql server  </span><br><span class="line">  </span><br><span class="line">`</span><span class="string">``</span> </span><br><span class="line"><span class="comment">--- 创建 备份数据的 device     USE master      EXEC sp_addumpdevice 'disk', 'testBack', 'c:\mssql7backup\MyNwind_1.dat'     --- 开始 备份      BACKUP DATABASE pubs TO testBack  </span></span><br><span class="line"><span class="string">``</span><span class="string">`     </span><br><span class="line">4、说明：创建新表   </span><br><span class="line"></span><br><span class="line">`</span><span class="string">``</span>   </span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> tabname(col1 type1 [<span class="keyword">not</span> <span class="literal">null</span>] [primary <span class="keyword">key</span>],col2 type2 [<span class="keyword">not</span> <span class="literal">null</span>],..)      根据已有的表创建新表：      A：<span class="keyword">create</span> <span class="keyword">table</span> tab_new <span class="keyword">like</span> tab_old (使用旧表创建新表)      B：<span class="keyword">create</span> <span class="keyword">table</span> tab_new <span class="keyword">as</span> <span class="keyword">select</span> col1,col2„ <span class="keyword">from</span> tab_old definition <span class="keyword">only</span></span><br><span class="line"><span class="string">``</span><span class="string">`       </span><br><span class="line">5、说明：删除新表</span><br><span class="line"></span><br><span class="line">`</span><span class="string">``</span>     </span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> tabname </span><br><span class="line"><span class="string">``</span><span class="string">`      </span><br><span class="line">6、说明：增加一个列  </span><br><span class="line"></span><br><span class="line">`</span><span class="string">``</span>    </span><br><span class="line"><span class="keyword">Alter</span> <span class="keyword">table</span> tabname <span class="keyword">add</span> <span class="keyword">column</span> <span class="keyword">col</span> <span class="keyword">type</span>      注：列增加后将不能删除。DB2中列加上后数据类型也不能改变，唯一能改变的是增加<span class="built_in">varchar</span>类型的长度。</span><br><span class="line"><span class="string">``</span><span class="string">`        </span><br><span class="line">7、说明：添加主键：</span><br><span class="line"></span><br><span class="line">`</span><span class="string">``</span> </span><br><span class="line"><span class="keyword">Alter</span> <span class="keyword">table</span> tabname <span class="keyword">add</span> primary <span class="keyword">key</span>(<span class="keyword">col</span>)     说明：删除主键： <span class="keyword">Alter</span> <span class="keyword">table</span> tabname <span class="keyword">drop</span> primary <span class="keyword">key</span>(<span class="keyword">col</span>) </span><br><span class="line"><span class="string">``</span><span class="string">`       </span><br><span class="line">8、说明：创建索引：</span></span></span><br></pre></td></tr></table></figure>
 <p>create [unique] index idxname on tabname(col„.)     </p>
 <p>**删除索引：drop index idxname      注：索引是不可更改的，想更改必须删除重新建。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">9</span>、说明：创建视图：</span><br></pre></td></tr></table></figure></p>
@@ -92,7 +94,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/12/28/数据库基本操作/" data-id="ciipnn83g0001f65g4s1yon76" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/12/28/数据库基本操作/" data-id="ciipnpfvh0001fu5g5ak548a7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -164,7 +166,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/12/27/My-first-day/" data-id="ciipnn8360000f65g0qctmzfa" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/12/27/My-first-day/" data-id="ciipnpfv70000fu5ghh4pd38y" class="article-share-link">Share</a>
       
       
     </footer>
@@ -209,7 +211,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/12/27/hello-world/" data-id="ciipnn83o0003f65gczkgpd4c" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/12/27/hello-world/" data-id="ciipnpfvo0003fu5gv8mqvx18" class="article-share-link">Share</a>
       
       
     </footer>
@@ -702,7 +704,7 @@ sprintf是格式化函数。将一段数据通过特定的格式，格式化到�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/12/27/ios面试题/" data-id="ciipnn83k0002f65gkb4ni0yd" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/12/27/ios面试题/" data-id="ciipnpfvk0002fu5gflp55fux" class="article-share-link">Share</a>
       
       
     </footer>
